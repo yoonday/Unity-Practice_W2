@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Q3 [구현사항 1]
-[CreateAssetMenu(fileName = "DefaultQuestSO", menuName = "QuestData", order = 0)]
+[CreateAssetMenu(fileName = "QuestSO", menuName = "QuestData/Type/Default", order = 0)]
 public class QuestDataSO : ScriptableObject
 {
     [Header("Quest Info")]
