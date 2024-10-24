@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7a4cff7c7d085445818237a0d34dce8, type: 3}
   m_Name: MonsterQuestSO
   m_EditorClassIdentifier: 
-  QuestName: 
-  QuestRequiredLevel: 0
+  QuestName: "\uC720\uB2C8\uD2F0 \uB9C8\uC2A4\uD130\uAC00 \uB418\uB294 \uAE38"
+  QuestRequiredLevel: 70
   QuestNPC: 0
-  QestPrerequisites: 
-  monsterName: 
+  QuestPrerequisites: 
+  monsterName: "\uC548\uD61C\uB9B0 \uB9E4\uB2C8\uC800\uB2D8\uC758 \uAFB8\uC900\uACFC\uC81C"
+  headCount: 50

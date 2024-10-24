@@ -7,4 +7,5 @@ public class MonsterQuestDataSO : QuestDataSO
 {
     [Header("Monster Info")]
     public string monsterName;
+    public int headCount; 
 }

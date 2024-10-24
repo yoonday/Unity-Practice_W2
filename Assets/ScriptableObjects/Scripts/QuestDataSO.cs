@@ -10,5 +10,5 @@ public class QuestDataSO : ScriptableObject
     public string QuestName;
     public int QuestRequiredLevel;
     public int QuestNPC;
-    public List<int> QestPrerequisites;
+    public List<int> QuestPrerequisites;
 }

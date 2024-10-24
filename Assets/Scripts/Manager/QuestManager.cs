@@ -33,11 +33,25 @@ public class QuestManager : MonoBehaviour
         
     }
 
-    // [구현사항 3] 인스턴스 검사 로직
+    // Q3. [구현사항3]
+    public List<QuestDataSO> Quests;
+
+    // Q1[구현사항 3] 인스턴스 검사 로직
     private void Awake()
     {
         if (Instance != null) Destroy(gameObject); // 이미 생성된 인스턴스가 있다면 새로 생성된 게임 오브젝트 파괴하기
 
         instance = this;
+        PrintQuestData();
+    }
+
+    private void PrintQuestData()
+    {
+        for (int i = 0; i < Quests.Count; i++)
+        {
+            QuestDataSO quest = Quests[i];
+            Debug.Log($"Quest{i + 1} - {quest.QuestName} (최소 레벨 {quest.QuestRequiredLevel})");
+        }
+        
     }
 }
