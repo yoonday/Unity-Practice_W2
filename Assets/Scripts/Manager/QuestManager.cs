@@ -1,12 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
 {
+
     // Q1 [구현사항 1]
     private static QuestManager instance;
+
+    // Q3. [구현사항3]
+    public List<QuestDataSO> Quests;
+
+    // Q3. [선택 구현사항]
+    public TextMeshProUGUI questInfo;
 
     // Q2 [구현사항 2]
     public static QuestManager Instance
@@ -33,8 +41,7 @@ public class QuestManager : MonoBehaviour
         
     }
 
-    // Q3. [구현사항3]
-    public List<QuestDataSO> Quests;
+    
 
     // Q1[구현사항 3] 인스턴스 검사 로직
     private void Awake()
@@ -47,11 +54,27 @@ public class QuestManager : MonoBehaviour
 
     private void PrintQuestData()
     {
+        string questText ="";
+        
         for (int i = 0; i < Quests.Count; i++)
         {
             QuestDataSO quest = Quests[i];
-            Debug.Log($"Quest{i + 1} - {quest.QuestName} (최소 레벨 {quest.QuestRequiredLevel})");
+            questText += $"Quest{i + 1} - {quest.QuestName} (최소 레벨 {quest.QuestRequiredLevel})";
+
+            // Q3. [선택 구현사항]
+            switch (quest)
+            {
+                case MonsterQuestDataSO monsterQuest:
+                    questText += $"{monsterQuest.monsterName}를 {monsterQuest.headCount} 소탕";
+                    break;
+                case EncounterQuestDataSO encounterQuest:
+                    questText += $"{encounterQuest.encounterName}과 대화하기";
+                    break;
+                default:
+                    break;
+            }
         }
-        
+
+        questInfo.text = questText;
     }
 }
